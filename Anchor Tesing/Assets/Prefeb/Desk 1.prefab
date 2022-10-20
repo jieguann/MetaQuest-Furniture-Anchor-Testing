@@ -194,9 +194,10 @@ GameObject:
   m_Component:
   - component: {fileID: 670190173264333139}
   - component: {fileID: 4538163406403395798}
+  - component: {fileID: 3078464022904489550}
   m_Layer: 9
-  m_Name: Desk
-  m_TagString: Untagged
+  m_Name: Desk 1
+  m_TagString: Desk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,6 +230,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab3ec25e32ce0c4380714d75e39cb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3078464022904489550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4350422998566360405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a3411bb06be6f4094bbf90a3391272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPrefab: {fileID: 4038922838903906347, guid: b475da317c7c4464fbefbc53c4f5d3ec,
+    type: 3}
+  respawn: {fileID: 3396977722360074992}
+  tagNema: 
 --- !u!1 &7284367002185598776
 GameObject:
   m_ObjectHideFlags: 0

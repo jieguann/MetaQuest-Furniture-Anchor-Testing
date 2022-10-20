@@ -1876,13 +1876,13 @@ PrefabInstance:
     - target: {fileID: 747806495401477012, guid: c813208e672e3074bbe118e1a9ee94fd,
         type: 3}
       propertyPath: PrefabOverrides.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 747806495401477012, guid: c813208e672e3074bbe118e1a9ee94fd,
         type: 3}
       propertyPath: PrefabOverrides.Array.data[0].Prefab
       value: 
-      objectReference: {fileID: 4233595128056633683, guid: b475da317c7c4464fbefbc53c4f5d3ec,
+      objectReference: {fileID: 4538163406403395798, guid: 39b4e373e6bd0c447b1e620651e27ddb,
         type: 3}
     - target: {fileID: 747806495401477012, guid: c813208e672e3074bbe118e1a9ee94fd,
         type: 3}
@@ -1893,7 +1893,7 @@ PrefabInstance:
     - target: {fileID: 747806495401477012, guid: c813208e672e3074bbe118e1a9ee94fd,
         type: 3}
       propertyPath: PrefabOverrides.Array.data[0].ClassificationLabel
-      value: COUCH
+      value: DESK
       objectReference: {fileID: 0}
     - target: {fileID: 747806495401477012, guid: c813208e672e3074bbe118e1a9ee94fd,
         type: 3}
@@ -1903,7 +1903,7 @@ PrefabInstance:
     - target: {fileID: 747806495401477012, guid: c813208e672e3074bbe118e1a9ee94fd,
         type: 3}
       propertyPath: PrefabOverrides.Array.data[0]._editorClassificationIndex
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 747806495401477012, guid: c813208e672e3074bbe118e1a9ee94fd,
         type: 3}
