@@ -26,9 +26,12 @@ namespace M2MqttUnity.Examples
 
         private List<string> eventMessages = new List<string>();
         private bool updateUI = false;
+
+
         
 
-         
+        
+
         public float seconds = 0f;
         public float minutes = 0f;
         //public float totalSeconds = 0f;
@@ -67,25 +70,7 @@ namespace M2MqttUnity.Examples
             this.isEncrypted = isEncrypted;
         }
 
-        /*
-        public void SetUiMessage(string msg)
-        {
-            if (consoleInputField != null)
-            {
-                consoleInputField.text = msg;
-                updateUI = true;
-            }
-        }
-
-        public void AddUiMessage(string msg)
-        {
-            if (consoleInputField != null)
-            {
-                consoleInputField.text += msg + "\n";
-                updateUI = true;
-            }
-        }
-        */
+       
         protected override void OnConnecting()
         {
             base.OnConnecting();
@@ -105,12 +90,8 @@ namespace M2MqttUnity.Examples
 
         protected override void SubscribeTopics()
         {
-            client.Subscribe(new string[] { "jieThesis/Oculus/seconds" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-            client.Subscribe(new string[] { "jieThesis/Oculus/minutes" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-            client.Subscribe(new string[] { "jieThesis/Oculus/cellPhone" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-            client.Subscribe(new string[] { "jieThesis/Oculus/teddyBear" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-            client.Subscribe(new string[] { "jieThesis/Oculus/wineGlass" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-
+            client.Subscribe(new string[] { "ACELab/3DTracking/Cup" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            
         }
 
         protected override void UnsubscribeTopics()
@@ -148,44 +129,18 @@ namespace M2MqttUnity.Examples
             StoreMessage(msg);
             //Data = JsonMapper.ToObject(msg);
 
-            if (topic == "jieThesis/Oculus/seconds")
+            if (topic == "ACELab/3DTracking/Cup")
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
-                seconds = Single.Parse(msg);
-                //print("seconds: "+ seconds);
+
+
+                //seconds = Single.Parse(msg);
+                //JsonUtility.FromJson<CupPosition>(msg);
+                print(msg);
             }
 
-            if (topic == "jieThesis/Oculus/minutes")
-            {
-                //print("1: " + Single.Parse(msg));
-                //print(msg.GetType());
-                minutes = Single.Parse(msg);
-                //print("minutes: " + minutes);
-            }
-
-            if (topic == "jieThesis/Oculus/cellPhone")
-            {
-                //print("1: " + Single.Parse(msg));
-                //print(msg.GetType());
-                cellPhone = bool.Parse(msg);
-                //print("cell phone: " + cellPhone);
-            }
-
-            if (topic == "jieThesis/Oculus/teddyBear")
-            {
-                //print("1: " + Single.Parse(msg));
-                //print(msg.GetType());
-                teddyBear = bool.Parse(msg);
-                //print("cell phone: " + cellPhone);
-            }
-            if (topic == "jieThesis/Oculus/wineGlass")
-            {
-                //print("1: " + Single.Parse(msg));
-                //print(msg.GetType());
-                wineGlass = bool.Parse(msg);
-                //print("cell phone: " + cellPhone);
-            }
+           
 
 
 
@@ -205,23 +160,7 @@ namespace M2MqttUnity.Examples
         protected override void Update()
         {
             base.Update(); // call ProcessMqttEvents()
-            //ProcessMessage(msg);
-            /*
-            if (eventMessages.Count > 0)
-            {
-                foreach (string msg in eventMessages)
-                {
-                    ProcessMessage(msg);
-                }
-                eventMessages.Clear();
-            }
-            */
-            /*
-            if (updateUI)
-            {
-                UpdateUI();
-            }
-            */
+           
         }
 
         private void OnDestroy()
