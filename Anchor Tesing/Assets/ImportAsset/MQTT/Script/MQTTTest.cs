@@ -27,17 +27,19 @@ namespace M2MqttUnity.Examples
         private List<string> eventMessages = new List<string>();
         private bool updateUI = false;
 
-
+        public string Topic1 = "ACELab/3DTracking";
         
 
-        
+        public class cup
+        {
+            public float x;
+            public float y;
+            public float z;
+        }
 
-        public float seconds = 0f;
-        public float minutes = 0f;
-        //public float totalSeconds = 0f;
-        public bool cellPhone = false;
-        public bool teddyBear = false;
-        public bool wineGlass = false;
+
+
+        public Vector3 cupPosition;
 
 
         public void TestPublish()
@@ -90,7 +92,7 @@ namespace M2MqttUnity.Examples
 
         protected override void SubscribeTopics()
         {
-            client.Subscribe(new string[] { "ACELab/3DTracking/Cup" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            client.Subscribe(new string[] { Topic1 }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
             
         }
 
@@ -129,7 +131,7 @@ namespace M2MqttUnity.Examples
             StoreMessage(msg);
             //Data = JsonMapper.ToObject(msg);
 
-            if (topic == "ACELab/3DTracking/Cup")
+            if (topic == Topic1)
             {
                 //print("1: " + Single.Parse(msg));
                 //print(msg.GetType());
@@ -137,7 +139,10 @@ namespace M2MqttUnity.Examples
 
                 //seconds = Single.Parse(msg);
                 //JsonUtility.FromJson<CupPosition>(msg);
-                print(msg);
+                //print(msg);
+                cup cupPositionTemp = JsonUtility.FromJson<cup>(msg);
+                cupPosition = new Vector3(cupPositionTemp.x, cupPositionTemp.y, cupPositionTemp.z);
+                print(cupPosition);
             }
 
            
